@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/WebSockets-REST_API/static/css/main.78b65c14.chunk.css",
+    "main.js": "/WebSockets-REST_API/static/js/main.d715a0c1.chunk.js",
+    "main.js.map": "/WebSockets-REST_API/static/js/main.d715a0c1.chunk.js.map",
+    "runtime-main.js": "/WebSockets-REST_API/static/js/runtime-main.de27eac6.js",
+    "runtime-main.js.map": "/WebSockets-REST_API/static/js/runtime-main.de27eac6.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/WebSockets-REST_API/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.62786d2d.chunk.js": "/WebSockets-REST_API/static/js/2.62786d2d.chunk.js",
+    "static/js/2.62786d2d.chunk.js.map": "/WebSockets-REST_API/static/js/2.62786d2d.chunk.js.map",
+    "index.html": "/WebSockets-REST_API/index.html",
+    "precache-manifest.f333b3eeb4c44f5c659b862c74d77276.js": "/WebSockets-REST_API/precache-manifest.f333b3eeb4c44f5c659b862c74d77276.js",
+    "service-worker.js": "/WebSockets-REST_API/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/WebSockets-REST_API/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.78b65c14.chunk.css.map": "/WebSockets-REST_API/static/css/main.78b65c14.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de27eac6.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.62786d2d.chunk.js",
+    "static/css/main.78b65c14.chunk.css",
+    "static/js/main.d715a0c1.chunk.js"
+  ]
+}
