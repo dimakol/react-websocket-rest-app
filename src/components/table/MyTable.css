@@ -1,0 +1,25 @@
+#albums {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 5% 15%;
+}
+  
+#albums td, #albums th {
+    border: 1px solid black;
+    padding: 8px;
+}
+  
+/* Very light gray color */
+#albums tr:nth-child(odd) { background-color: #f2f2f2; }
+  
+#albums tr:hover { background-color: lightgreen; }
+  
+/* Header cells */
+#albums th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}

@@ -1,13 +1,24 @@
 {
   "name": "ws-restapi",
   "version": "0.1.0",
+  "author": "Dima Kolyas",
   "private": true,
+  "description": "Single page application with 2 pages: Web Socket, Rest API",
+  "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.1",
+    "bootstrap": "^4.4.1",
+    "gh-pages": "^2.2.0",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
+  "homepage": "https://dimakol.github.io/WebSockets-REST_API",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
