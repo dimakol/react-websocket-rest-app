@@ -1,68 +1,170 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## WebSockets-Rest_API
 
-## Available Scripts
+The project implements and show the two most popular options available today for client-server communication protocols: **WebSocket against RESTful HTTP**.
 
-In the project directory, you can run:
+## Motivation
 
-### `npm start`
+The motivation behind this project was to **learn and understand better the topic of client-server communication** (the communication between a web browser and a web server) and to implement it with **ReactJS** web framework.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
+```
+![image](/screenshots/RestAPI.png?raw=true "RestAPI")
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![animated gif](/screenshots/WebSocket.gif?raw=true "WebSocket")
+```
 
-### `npm test`
+## Tech/framework used
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Built with**
 
-### `npm run build`
+-   [ReactJS](https://reactjs.org/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- The JSON data that we receive from the REST API is displayed in a beautifully designed **Table**.
+- The messages that we receive from the WebSocket is displayed on the screen as **Live Rates Ticker** that are colorfully designed and include start/stop button.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Code Examples
 
-### `npm run eject`
+**REST API**
+~~~
+// Using useEffect to retrieve data from an API
+useEffect(() => {
+	const source = axios.CancelToken.source();
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+	const fetchData = async () => {
+		setIsError(false);
+		setIsLoading(true);
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+		try {
+			// Making our HTTP request to the specified url
+			const response = await axios(url, {
+				cancelToken: source.token
+			});
+			// Updating the state with the data we got from the response
+			setData(response.data);
+		} catch (error) {
+			setIsError(true);
+			if (axios.isCancel(error)) {
+				console.log('request cancelled');
+			} else {
+				throw error;
+			}
+		}
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+		setIsLoading(false);
+	};
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+	// Invoke the async function
+	fetchData();
 
-## Learn More
+	// Unmount
+	return () => {
+		source.cancel();
+	};
+}, []);
+~~~
+**WebSocket**
+~~~ 
+// Consistent WebSocket API connection
+const webSocket = useRef(null);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+// Socket onopen effect
+useEffect(() => {
+	// Connect to websocket
+	connect();
+	webSocket.current.onopen = (event) => {
+		try {
+			// Subscribing to a channel by sending JSON message to the server
+			toogleChannel("subscribe");
+		} catch (err) {
+			console.log("Got invalid message from websocket on open", err, event.data);
+		}
+	}
+}, []);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// Socket onmessage effect
+useEffect(() => {
+	webSocket.current.onmessage = (event) => {
+		// Some response message
+		const response = JSON.parse(event.data);
+		switch (response.event) {
+			case 'data':
+				// Calculate the rate by summing the last bid with the last ask and divide it by 2
+				rateCalculate(response.data.bids[0][0], response.data.asks[0][0])
+					// Generate rate object that includes value and color
+					.then( rate => generateRateObject(!rates.length ? undefined : rates[rates.length-1].value, rate))
+					// Adding the new rate to previous rates array by using array spread operator.
+					.then( rateObj => setRates(rates => [...rates, rateObj]));
+				break;
+			case 'bts:request_reconnect':
+				// Forced reconnection
+				connect();
+				break;
+			default:
+				break;
+		}
+	}
+}, [rates]);
 
-### Code Splitting
+// Socket onclose effect
+useEffect(() => {
+	webSocket.current.onclose = (event) => {
+		// Wasn't cleaned
+		if (!event.wasClean) {
+			console.log({ error: `WebSocket error: ${event.code} ${event.reason}` });
+			// Reconnect
+			connect();
+		}
+	}
+}, []);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+// Socket onerror effect
+useEffect(() => {
+	webSocket.current.onerror = (event) => {
+		console.log("received websocket error", event);
+	}
+}, []);
 
-### Analyzing the Bundle Size
+// Unmount
+useEffect(() => () => {
+	webSocket.current.close();
+}, [webSocket])
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+// WebSocket connection
+const connect = () => {
+	webSocket.current = new WebSocket(serverEndPoint);
+}
+~~~
 
-### Making a Progressive Web App
+## Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**Running in development environment**
 
-### Advanced Configuration
+	git, npm and node softwares should be installed
+	before moving on
+	
+ - git clone https://github.com/dimakol/WebSockets-REST_API.git
+ - cd WebSockets-REST_API/ 
+ - npm install
+ - npm start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## API Reference
 
-### Deployment
+- https://www.bitstamp.net/websocket/v2/ - Websocket API
+- https://jsonplaceholder.typicode.com/ - REST API
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Link to the website that hosting our project
 
-### `npm run build` fails to minify
+https://dimakol.github.io/WebSockets-REST_API/
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Credits
+
+- https://www.robinwieruch.de/react-hooks-fetch-data
+- https://www.grapecity.com/blogs/moving-from-react-components-to-react-hooks
+- https://github.com/Nikhil-Kumaran/ChatApp/blob/master/src/WebSockets.js
+- https://dev.to/sama/react-with-websockets-254e
+
+## License
+
+MIT © Dima Kolyas
