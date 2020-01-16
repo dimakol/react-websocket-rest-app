@@ -8,9 +8,9 @@ The motivation behind this project was to **learn and understand better the topi
 
 ## Screenshots
 ```
-![image](/screenshots/RestAPI.png?raw=true "RestAPI")
+![image](screenshots/RestAPI.png?raw=true "RestAPI")
 
-![animated gif](/screenshots/WebSocket.gif?raw=true "WebSocket")
+![animated gif](screenshots/WebSocket.gif?raw=true "WebSocket")
 ```
 
 ## Tech/framework used
