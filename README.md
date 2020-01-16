@@ -7,11 +7,10 @@ The project implements and show the two most popular options available today for
 The motivation behind this project was to **learn and understand better the topic of client-server communication** (the communication between a web browser and a web server) and to implement it with **ReactJS** web framework.
 
 ## Screenshots
-```
+
 ![image](screenshots/RestAPI.png?raw=true "RestAPI")
 
 ![animated gif](screenshots/WebSocket.gif?raw=true "WebSocket")
-```
 
 ## Tech/framework used
 
