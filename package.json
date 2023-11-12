@@ -6,7 +6,7 @@
   "description": "Single page application with 2 pages: Web Socket, Rest API",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
     "react": "^16.12.0",
