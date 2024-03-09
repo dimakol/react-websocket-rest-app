@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/WebSockets-REST_API/static/css/main.78b65c14.chunk.css",
-    "main.js": "/WebSockets-REST_API/static/js/main.d715a0c1.chunk.js",
-    "main.js.map": "/WebSockets-REST_API/static/js/main.d715a0c1.chunk.js.map",
-    "runtime-main.js": "/WebSockets-REST_API/static/js/runtime-main.de27eac6.js",
-    "runtime-main.js.map": "/WebSockets-REST_API/static/js/runtime-main.de27eac6.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/WebSockets-REST_API/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.62786d2d.chunk.js": "/WebSockets-REST_API/static/js/2.62786d2d.chunk.js",
-    "static/js/2.62786d2d.chunk.js.map": "/WebSockets-REST_API/static/js/2.62786d2d.chunk.js.map",
-    "index.html": "/WebSockets-REST_API/index.html",
-    "precache-manifest.f333b3eeb4c44f5c659b862c74d77276.js": "/WebSockets-REST_API/precache-manifest.f333b3eeb4c44f5c659b862c74d77276.js",
-    "service-worker.js": "/WebSockets-REST_API/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/WebSockets-REST_API/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.78b65c14.chunk.css.map": "/WebSockets-REST_API/static/css/main.78b65c14.chunk.css.map"
+    "main.css": "/react-websocket-rest-app/static/css/main.312aebf4.chunk.css",
+    "main.js": "/react-websocket-rest-app/static/js/main.6b180fab.chunk.js",
+    "main.js.map": "/react-websocket-rest-app/static/js/main.6b180fab.chunk.js.map",
+    "runtime-main.js": "/react-websocket-rest-app/static/js/runtime-main.2bbb793c.js",
+    "runtime-main.js.map": "/react-websocket-rest-app/static/js/runtime-main.2bbb793c.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/react-websocket-rest-app/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.da684118.chunk.js": "/react-websocket-rest-app/static/js/2.da684118.chunk.js",
+    "static/js/2.da684118.chunk.js.map": "/react-websocket-rest-app/static/js/2.da684118.chunk.js.map",
+    "index.html": "/react-websocket-rest-app/index.html",
+    "precache-manifest.3e21f52eeff95da3f2636035838099cd.js": "/react-websocket-rest-app/precache-manifest.3e21f52eeff95da3f2636035838099cd.js",
+    "service-worker.js": "/react-websocket-rest-app/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/react-websocket-rest-app/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.312aebf4.chunk.css.map": "/react-websocket-rest-app/static/css/main.312aebf4.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.de27eac6.js",
+    "static/js/runtime-main.2bbb793c.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.62786d2d.chunk.js",
-    "static/css/main.78b65c14.chunk.css",
-    "static/js/main.d715a0c1.chunk.js"
+    "static/js/2.da684118.chunk.js",
+    "static/css/main.312aebf4.chunk.css",
+    "static/js/main.6b180fab.chunk.js"
   ]
 }
