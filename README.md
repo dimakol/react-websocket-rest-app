@@ -1,4 +1,4 @@
-## WebSockets-Rest_API
+# WebSocket REST App
 
 The project implements and show the two most popular options available today for client-server communication protocols: **WebSocket against RESTful HTTP**.
 
@@ -16,7 +16,7 @@ The motivation behind this project was to **learn and understand better the topi
 
 **Built with**
 
--   [ReactJS](https://reactjs.org/)
+- [ReactJS](https://reactjs.org/)
 
 ## Features
 
@@ -26,7 +26,8 @@ The motivation behind this project was to **learn and understand better the topi
 ## Code Examples
 
 **REST API**
-~~~
+
+```
 // Using useEffect to retrieve data from an API
 useEffect(() => {
 	const source = axios.CancelToken.source();
@@ -62,9 +63,11 @@ useEffect(() => {
 		source.cancel();
 	};
 }, []);
-~~~
-**WebSocket**
-~~~ 
+```
+
+**WebSocket API**
+
+```
 // Consistent WebSocket API connection
 const webSocket = useRef(null);
 
@@ -134,28 +137,35 @@ useEffect(() => () => {
 const connect = () => {
 	webSocket.current = new WebSocket(serverEndPoint);
 }
-~~~
+```
 
 ## Installation
 
-**Running in development environment**
+**Running Locally**
 
-	git, npm and node softwares should be installed
-	before moving on
-	
- - git clone https://github.com/dimakol/WebSockets-REST_API.git
- - cd WebSockets-REST_API/ 
- - npm install
- - npm start
+git, npm and node softwares should be installed before moving on
+
+```bash
+git clone https://github.com/dimakol/react-websocket-rest-app.git
+cd react-websocket-rest-app
+npm install
+npm run start
+```
+
+**Building for production**
+
+```bash
+npm run build
+```
 
 ## API Reference
 
 - https://www.bitstamp.net/websocket/v2/ - Websocket API
 - https://jsonplaceholder.typicode.com/ - REST API
 
-## Link to the website that hosting our project
+## Deployed to Github pages
 
-https://dimakol.github.io/WebSockets-REST_API/
+https://dimakol.github.io/react-websocket-rest-app/
 
 ## Credits
 
@@ -166,4 +176,6 @@ https://dimakol.github.io/WebSockets-REST_API/
 
 ## License
 
-MIT © Dima Kolyas
+(The MIT License)
+
+Copyright © 2020 Dima Kolyas
