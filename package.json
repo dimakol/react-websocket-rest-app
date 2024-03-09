@@ -1,9 +1,9 @@
 {
-  "name": "ws-restapi",
+  "name": "react-websocket-rest-app",
   "version": "0.1.0",
   "author": "Dima Kolyas",
   "private": true,
-  "description": "Single page application with 2 pages: Web Socket, Rest API",
+  "description": "Single page application with 2 pages: WebSocket API, REST API",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.21.1",
@@ -15,14 +15,14 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
   },
-  "homepage": "https://dimakol.github.io/WebSockets-REST_API",
+  "homepage": "https://dimakol.github.io/react-websocket-rest-app/",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
